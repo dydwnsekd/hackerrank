@@ -8,16 +8,18 @@ public class Solution {
         Scanner sc=new Scanner(System.in);
         String A=sc.next();
         /* Enter your code here. Print output to STDOUT. */
-        
-        String reverse = new String(5);
+        String reverse = "";
 
-        System.out.println(A.charAt(1));
+        for(int i=1;i<=A.length();i++)
+            reverse = reverse.concat(Character.toString(A.charAt(A.length()-i)));
 
-        for(int i=0;i<A.length();i++)
-        {
-            reverse.charAt(i) = A.charAt(A.length()-i);
-        }
+        if(reverse.equals(A))
+            System.out.println("Yes");
+        else
+            System.out.println("No");
 
-        System.out.println(reverse);
     }
 }
+
+
+
