@@ -7,12 +7,11 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         // Write your code here.
-        String[] ss = s.split("[A-Za-z !,?._'@]+");
+        String[] ss;
+        ss = s.split("[ .,'!?]+");
         System.out.println(ss.length);
         for(String i: ss)
-        {
             System.out.println(i);
-        }
 
         scan.close();
     }
