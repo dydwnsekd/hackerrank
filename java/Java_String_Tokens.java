@@ -7,13 +7,21 @@ public class Solution {
         Scanner scan = new Scanner(System.in);
         String s = scan.nextLine();
         // Write your code here.
-        String[] ss;
-        ss = s.split("[ .,'!?]+");
-        System.out.println(ss.length);
-        for(String i: ss)
-            System.out.println(i);
+        s = s.trim();
 
-        scan.close();
+        String[] ss;
+        ss = s.split("[ .,'!?@_]+");
+
+        System.out.println(s);
+
+        if(s == "")
+            System.out.println("0");
+        else if(ss.length <= 400000)
+        {  
+            System.out.println(ss.length);
+            for(String i: ss)
+                System.out.println(i);
+        }
     }
 }
 
