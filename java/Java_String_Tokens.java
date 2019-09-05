@@ -9,19 +9,23 @@ public class Solution {
         // Write your code here.
         s = s.trim();
 
-        String[] ss;
-        ss = s.split("[ .,'!?@_]+");
-
-        System.out.println(s);
-
-        if(s == "")
+        
+        if(s.length() == 0)
             System.out.println("0");
-        else if(ss.length <= 400000)
-        {  
-            System.out.println(ss.length);
-            for(String i: ss)
-                System.out.println(i);
+        else
+        {
+            String[] ss;
+            ss = s.split("[ .,'!?@_]+");
+  
+            if(ss.length <= 400000)
+            {
+                System.out.println(ss.length);
+                for(String i: ss)
+                    System.out.println(i);
+            }
         }
+        
+        scan.close();
     }
 }
 
