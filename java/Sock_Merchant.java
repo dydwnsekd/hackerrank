@@ -10,20 +10,23 @@ public class Solution {
 
     // Complete the sockMerchant function below.
     static int sockMerchant(int n, int[] ar) {
-
+        ArrayList<Integer> arlist = new ArrayList<>();
         int result = 0;
-        ArrayList<Integer> temp_list = new ArrayList<Integer>();
 
-        // java contains를 이용해서 배열안에 값이 들어있는지 확인하려 했으나, 자바 배열은 기본적으로 contains를 지원하지 않음.
-        // 다른 방법 필요
-        for(int i=0; i<n; i++)
+        for(int i=0;i<n;i++)
         {
-            if temp_list.contain(ar[i])
+            if(arlist.contains(ar[i]))
             {
-                
+                arlist.remove(arlist.indexOf(ar[i]));
+                System.out.println(i);
+                System.out.println(ar[i]);
+                result++;
             }
+            else
+                arlist.add(ar[i]);
         }
 
+        return result;
     }
 
     private static final Scanner scanner = new Scanner(System.in);
