@@ -6,3 +6,9 @@ object Solution extends App {
             println("Hello World")
         }
     }
+
+/* best
+object Solution extends App {
+    def f(n: Int) = println("Hello World\n" * n)
+}
+*/
