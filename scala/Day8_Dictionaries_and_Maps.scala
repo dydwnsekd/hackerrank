@@ -1,5 +1,4 @@
 import scala.collection.mutable
-
 object Solution {
 
     def main(args: Array[String]) {
@@ -17,14 +16,17 @@ object Solution {
             m += (name -> phone_num)
         }
         
-        for ( i <- 0 until n )
+        while ( true )
         {
             var findkey = scala.io.StdIn.readLine()
+            if ( findkey == null )
+                return
             var result = m.getOrElse(findkey, "")
             if (result == "")
                 println("Not found")
             else
                 println(findkey+"="+result)
         }
+
     }
 }
