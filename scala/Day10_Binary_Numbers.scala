@@ -10,8 +10,6 @@ import java.util.stream._
 
 object Solution {
 
-
-
     def main(args: Array[String]) {
         val stdin = scala.io.StdIn
 
@@ -23,21 +21,21 @@ object Solution {
 
         for (i <- bin_n)
         {   
-            if (i==1)
-            {
-                print (i)
+            if(i.toString=="1")
                 temp += 1
-            }
             else
             {   
                 if (count < temp)
-                {
                     count = temp
-                    temp = 0
-                }
+                temp = 0
             }
         }
-
+        
+        if (count < temp)
+        {
+            count = temp
+            temp = 0
+        }
         print (count)
     }
 }
