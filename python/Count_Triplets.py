@@ -7,6 +7,9 @@ import re
 import sys
 from collections import Counter
 
+# 참고
+# https://www.thepoorcoder.com/hackerrank-count-triplets-solution/
+
 # Complete the countTriplets function below.
 def countTriplets(arr, r):
     arr_counter = Counter(arr)
