@@ -14,6 +14,7 @@ object Solution {
         val stdin = scala.io.StdIn
 
         val arr = Array.ofDim[Int](6, 6)
+        var max_value = Integer.MIN_VALUE
 
         for (i <- 0 until 6) {
             arr(i) = stdin.readLine.split(" ").map(_.trim.toInt)
@@ -23,7 +24,12 @@ object Solution {
         {
             for (j <- 1 until 5)
             {
+                var temp = arr(i-1)(j-1) + arr(i-1)(j) + arr(i-1)(j+1) + arr(i)(j) + arr(i+1)(j-1) + arr(i+1)(j) + arr(i+1)(j+1)
+                if (max_value < temp)
+                    max_value = temp
             }
         }
+
+        return max_value
     }
 }
