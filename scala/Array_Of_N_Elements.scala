@@ -5,6 +5,6 @@ object Solution extends App {
         val list = (0 until num).toList
 
         return list
-    }Arr
+    }
 
     println(f(readInt))

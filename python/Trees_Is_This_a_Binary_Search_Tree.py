@@ -5,27 +5,18 @@ class node:
         self.left = None
         self.right = None
 """
-num_list = []
-flag = False
+
+import sys
 
 def checkBST(root):
-    if root.data in num_list:
-        flag = False
-        return 
-    else:
-        if root.left != None and root.data > root.left.data:
-            checkBST(root.left)
-        if root.right != None and root.data < root.right.data:
-            checkBST(root.right)
-        
-        if root.left == None and root.right == None:
-            flag = True
-            
-        return
-            
-    if flag:
-        print("Yes")
-    else:
-        print("No")
-            
-    
+    max = 999999
+    min = -999999
+
+    return check(root, min, max)
+
+def check(n, min_val, max_val):
+    if(n==None):
+        return True
+    if(n.data <= min_val or n.data >= max_val):
+        return False
+    return check(n.left, min_val, n.data) and check(n.right, n.data, max_val)
