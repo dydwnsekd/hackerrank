@@ -17,6 +17,7 @@ class Solution:
                 root.right=cur
         return root
 
+"""
     def levelOrder(self,root):
         #Write your code here
         print(root.data, end=" ")
@@ -24,6 +25,21 @@ class Solution:
             self.levelOrder(root.left)
         if root.right != None:
             self.levelOrder(root.right)
+"""
+    def levelOrder(self,root):
+        q = [ root ]
+        #i = 0
+        
+        #while i < len( q ):
+        #    current = q[i]
+        #    i += 1
+        
+        for current in q:    
+            if current:
+                print(current.data, end=' ')
+
+                q.append(current.left)
+                q.append(current.right) 
 
 T=int(input())
 myTree=Solution()
