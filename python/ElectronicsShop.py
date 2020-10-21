@@ -11,7 +11,7 @@ def getMoneySpent(keyboards, drives, b):
 
     for i in keyboards:
         for j in drives:
-            if max_value < i+j < b:
+            if max_value < i+j <= b:
                 max_value = i+j
 
     return max_value
