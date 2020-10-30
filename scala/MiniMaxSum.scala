@@ -12,20 +12,12 @@ object Solution {
 
     // Complete the miniMaxSum function below.
     def miniMaxSum(arr: Array[Int]) {
-        var min = Long.MaxValue
-        var max = Long.MinValue
-
+        
         val sum: Long = arr.map(_.toLong).sum
-
-        for (i <- arr) {
-            if (min > sum - i)
-                min = sum - i
-            if (max < sum -i)
-                max = sum - i
-        }
+        var min = sum - arr.max
+        var max = sum - arr.min
 
         printf("%d %d", min, max)
-
     }
 
     def main(args: Array[String]) {
