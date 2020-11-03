@@ -7,6 +7,7 @@ import java.util.concurrent._
 import java.util.function._
 import java.util.regex._
 import java.util.stream._
+import scala.collection.mutable.ArrayBuffer 
 
 object Solution {
 
@@ -17,8 +18,8 @@ object Solution {
         
         var return_count = ArrayBuffer[Int]()
 
-        var max_value = scores.get(0)
-        var min_value = scores.get(0)
+        var max_value = scores(0)
+        var min_value = scores(0)
 
         for (i <- scores) {
             if (max_value < i) {
