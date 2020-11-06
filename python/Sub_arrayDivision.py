@@ -6,28 +6,30 @@ import random
 import re
 import sys
 
-# Complete the divisibleSumPairs function below.
-def divisibleSumPairs(n, k, ar):
+# Complete the birthday function below.
+def birthday(s, d, m):
     count = 0
-    for i in range(n):
-        for j in range(i+1, n):
-            if (ar[i] + ar[j]) % k == 0:
-                count += 1
     
+    for i in range(len(s)-m+1):
+        if sum(s[i:i+m]) == d:
+            count += 1
+            
     return count
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    nk = input().split()
+    n = int(input().strip())
 
-    n = int(nk[0])
+    s = list(map(int, input().rstrip().split()))
 
-    k = int(nk[1])
+    dm = input().rstrip().split()
 
-    ar = list(map(int, input().rstrip().split()))
+    d = int(dm[0])
 
-    result = divisibleSumPairs(n, k, ar)
+    m = int(dm[1])
+
+    result = birthday(s, d, m)
 
     fptr.write(str(result) + '\n')
 
