@@ -14,16 +14,16 @@ import sys
 #
 
 def diagonalDifference(arr):
-    primary_diagonal=0;
-    second_diagonal=0;
+    primary_diagonal=0
+    second_diagonal=0
 
     for i in range(len(arr)):
         primary_diagonal += arr[i][i]
 
     for i in range(len(arr)-1, -1, -1):
-        second_diagonal += arr[len(arr)-1-i][i];
+        second_diagonal += arr[len(arr)-1-i][i]
     
-    return abs(primary_diagonal-second_diagonal);
+    return abs(primary_diagonal-second_diagonal)
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
