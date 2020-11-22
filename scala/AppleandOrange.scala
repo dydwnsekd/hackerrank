@@ -12,24 +12,8 @@ object Solution {
 
     // Complete the countApplesAndOranges function below.
     def countApplesAndOranges(s: Int, t: Int, a: Int, b: Int, apples: Array[Int], oranges: Array[Int]) {
-        var apple_count = 0
-        var orange_count = 0
-
-        var home = s to t
-
-        for (apple <- apples) {
-            if ( home.contains(a + apple) )
-                apple_count += 1
-        }
-        for (orange <- oranges) {
-            if ( home.contains(b + orange) )
-                orange_count += 1
-        }
-
-        println(apple_count)
-        println(orange_count)
-
-
+        println(apples.filter(s <= a+_).filter(a+_ <= t).length)
+        println(oranges.filter(s <= b+_).filter(b+_ <= t).length)
     }
 
     def main(args: Array[String]) {
