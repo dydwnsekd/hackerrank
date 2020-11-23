@@ -17,14 +17,18 @@ object Solution {
         var minus_count = 0.0d
         val arr_size = arr.size
 
-        for (i <- arr) {
-            if (i > 0)
-                plus_count += 1
-            else if (i == 0)
-                zero_count += 1
-            else
-                minus_count += 1
-        }
+        plus_count = arr.filter(_ > 0).length
+        zero_count = arr.filter(_ > 0).length
+        minus_count = arr.filter(_ > 0).length
+
+        // for (i <- arr) {
+        //     if (i > 0)
+        //         plus_count += 1
+        //     else if (i == 0)
+        //         zero_count += 1
+        //     else
+        //         minus_count += 1
+        // }
 
         printf("%f\n", (plus_count/arr_size))
         printf("%f\n", (minus_count/arr_size))
