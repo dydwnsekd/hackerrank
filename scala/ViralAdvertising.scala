@@ -18,7 +18,7 @@ object Solution {
         for(i <- 0 until n) {
             count += (like_num / 2)
             like_num = (like_num / 2) * 3
-        }
+        }z
         return count
     }
 
