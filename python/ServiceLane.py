@@ -8,8 +8,11 @@ import sys
 
 # Complete the serviceLane function below.
 def serviceLane(n, cases):
+    result = []
     for i in cases:
-        print(min(width[i[0]:i[1]]))
+        result.append(min(width[i[0]:i[1]+1]))
+        
+    return result
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
