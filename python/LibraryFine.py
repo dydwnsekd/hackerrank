@@ -17,6 +17,23 @@ def libraryFine(d1, m1, y1, d2, m2, y2):
     else:
         return 0
 
+    """
+    dt1 = str(y1) + str(m1) + str(d1)
+    dt2 = str(y2) + str(m2) + str(d2)
+    dt1 = datetime.strptime(dt1, "%Y%m%d")
+    dt2 = datetime.strptime(dt2, "%Y%m%d")
+    
+    if dt1 > dt2:
+        if y1 > y2:
+            return 10000
+        elif m1 > m2:
+            return (m1-m2) * 500
+        elif d1 > d2:
+            return (d1-d2) * 15
+    else:
+        return 0
+    """
+
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
