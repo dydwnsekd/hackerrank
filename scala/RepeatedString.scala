@@ -12,7 +12,7 @@ object Solution {
 
     // Complete the repeatedString function below.
     def repeatedString(s: String, n: Long): Long = {
-        val result = (s.count(_ == 'a') * n/s.length) + 
+        val result = (s.count(_ == 'a') * (n/s.length).toLong) + 
         (s.substring(0, (n % s.length).toInt).count(_ == 'a'))
         
         return result
