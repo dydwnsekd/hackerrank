@@ -8,10 +8,10 @@ import sys
 
 # Complete the chocolateFeast function below.
 def chocolateFeast(n, c, m):
-    eat_count = n / c
-    wrappers_count = n / c
+    eat_count = n // c
+    wrappers_count = n // c
     
-    while wrappers_count > m:
+    while wrappers_count >= m:
         temp_count = wrappers_count // m
         wrappers_count = wrappers_count - (temp_count * m) + temp_count
         eat_count += temp_count
