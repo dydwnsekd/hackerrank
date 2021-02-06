@@ -8,11 +8,9 @@ import sys
 
 # Complete the beautifulTriplets function below.
 def beautifulTriplets(d, arr):
-    start_num_list = list()
     count = 0
     for i in arr:
         if ((i+d) in arr) and ((i+d+d) in arr):
-            start_num_list.append(i)
             count += 1
             
     return count
