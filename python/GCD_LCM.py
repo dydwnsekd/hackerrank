@@ -10,6 +10,3 @@ def getGCD(num1, num2):
     
 def getLCM(num1, num2):
     return int((num1 * num2) / getGCD(num1, num2))
-
-print(getGCD(4,10))
-print(getLCM(4,10))

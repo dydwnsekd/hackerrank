@@ -10,7 +10,6 @@ import sys
 def maximumToys(prices, k):
     count = 0
     prices.sort()
-    print(prices)
     
     for i in prices:
         if k - i >= 0:
