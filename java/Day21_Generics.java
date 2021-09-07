@@ -9,13 +9,11 @@ class Printer <T> {
     **/
     
     // Write your code here
-public static <E> void printArray(E[] generic){
-    for(E element : generic) {
-        System.out.println(element); 
+    public static <E> void printArray(E[] generic){
+        for(E element : generic) {
+            System.out.println(element); 
+        }
     }
-}
-
-
 }
 
 public class Generics {
