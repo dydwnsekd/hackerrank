@@ -48,16 +48,17 @@ def compare_lists(llist1, llist2):
     head2 = llist2
     
     while head1.next != None and head2.next != None:
-        if head1.data == head2.data:
-            pass
-        elif head1.data != head2.data:
+        if head1.data != head2.data:
             return 0
-        elif head1.next != None and head2.next != None:
-            pass
         head1 = head1.next
         head2 = head2.next
     
-    return 1
+    if (head1.next != None and head2.next == None) or (head1.next == None and head2.next != None):
+        return 0
+    elif head1.data == head2.data:
+        return 1
+    
+        
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
