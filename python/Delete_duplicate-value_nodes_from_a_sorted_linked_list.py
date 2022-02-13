@@ -37,12 +37,10 @@ def print_singly_linked_list(node, sep, fptr):
             fptr.write(sep)
 
 #
-# Complete the 'getNode' function below.
+# Complete the 'removeDuplicates' function below.
 #
-# The function is expected to return an INTEGER.
-# The function accepts following parameters:
-#  1. INTEGER_SINGLY_LINKED_LIST llist
-#  2. INTEGER positionFromTail
+# The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
+# The function accepts INTEGER_SINGLY_LINKED_LIST llist as parameter.
 #
 
 #
@@ -54,25 +52,32 @@ def print_singly_linked_list(node, sep, fptr):
 #
 #
 
-def getNode(llist, positionFromTail):
+def removeDuplicates(llist):
     head = llist
-    data_list = []
+    new_llist = SinglyLinkedList()
+    node_set = [head.data]
     
     while head != None:
-        data_list.append(head.data)
+        if head.data in node_set:
+            pass
+        else:
+            node_set.append(head.data)
+        
         head = head.next
-    
-    if positionFromTail == 0:
-        return data_list[-1]
-    else:
-        return data_list[-(positionFromTail+1)]
+        
+    for i in node_set:
+        new_llist.insert_node(i)
+        
+    return new_llist.head
+
+            
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
 
-    tests = int(input())
+    t = int(input())
 
-    for tests_itr in range(tests):
+    for t_itr in range(t):
         llist_count = int(input())
 
         llist = SinglyLinkedList()
@@ -81,10 +86,9 @@ if __name__ == '__main__':
             llist_item = int(input())
             llist.insert_node(llist_item)
 
-        position = int(input())
+        llist1 = removeDuplicates(llist.head)
 
-        result = getNode(llist.head, position)
-
-        fptr.write(str(result) + '\n')
+        print_singly_linked_list(llist1, ' ', fptr)
+        fptr.write('\n')
 
     fptr.close()
