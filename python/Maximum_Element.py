@@ -15,17 +15,22 @@ import sys
 
 def getMax(operations):
     stack = []
-    max_stack = []
+    max_value = -99999
     result_list = []
     for op in operations:
         if op[0] == '1':
-            stack.append(op[2:])
-            max_stack.append(max(stack))
+            value = int(op[2:])
+            stack.append(value)
+            if value > max_value:
+                max_value = value
         elif op[0] == '2':
-            stack.pop()
-            max_stack.pop()
+            pop_value = stack.pop()
+            if pop_value == max_value and len(stack) > 0:
+                max_value = max(stack)
+            elif len(stack) == 0:
+                max_value = -99999
         else:
-            result_list.append(max_stack[-1])
+            result_list.append(max_value)
             
     return result_list
 
