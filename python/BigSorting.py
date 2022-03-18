@@ -14,8 +14,7 @@ import sys
 #
 
 def bigSorting(unsorted):
-    int_unsorted = sorted([int(i) for i in unsorted])
-    return [str(i) for i in int_unsorted]
+    return sorted(unsorted, key=int)
     
 
 if __name__ == '__main__':
