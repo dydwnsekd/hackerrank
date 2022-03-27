@@ -14,12 +14,10 @@ import sys
 #
 
 def gemstones(arr):
-    set_arr = []
-    for i in arr:
-        set_arr.append(set(i))
+    arr = list(map(set, arr))
     
-    result = set_arr[0]
-    for i in set_arr[1:]:
+    result = arr[0]
+    for i in arr[1:]:
         result = i & result
 
     return len(result)
