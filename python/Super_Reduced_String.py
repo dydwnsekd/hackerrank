@@ -16,11 +16,15 @@ import sys
 def superReducedString(s):
     prev_len_s = 0
     while prev_len_s != len(s):
+        prev_len_s = len(s)
         for i in range(len(s)-1):
             if s[i] == s[i+1]:
-                s = s[:i] + s[i+2:]
-    
-    return s if s else "Empty String"
+                if len(s) > i+2:
+                    s = s[:i] + s[i+2:]
+                    break
+                else:
+                    s = s[:i]
+                    break
 
 
 if __name__ == '__main__':
