@@ -25,4 +25,4 @@ for _ in range(n):
     
     set_arr = set_mutations(set_arr, command, args)
     
-    print(set_arr)
+print(sum(set_arr))
