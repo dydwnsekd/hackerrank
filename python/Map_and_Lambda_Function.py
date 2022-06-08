@@ -8,6 +8,13 @@ def fibonacci(n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
 
+def fibo_list(n):
+    answer = []
+    for i in range(n):
+        answer.append(fibonacci(i))
+
+    return answer
+
 if __name__ == '__main__':
     n = int(input())
-    print(list(map(cube, fibonacci(n))))
+    print(list(map(cube, fibo_list(n))))
