@@ -2,7 +2,7 @@ import re
 import sys
 
 n = int(sys.stdin.readline())
-p = re.compile("^[789][0-9]{9}")
+p = re.compile("^[789][0-9]{9}$")
 
 for _ in range(n):
     t = sys.stdin.readline()
